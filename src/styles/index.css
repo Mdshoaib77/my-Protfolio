@@ -857,6 +857,92 @@ header img {
 .hero-section .funfact-area {
   margin-top: 120px;
 }
+/* ============================
+   ✅ Responsive Adjustments
+   ============================ */
+
+/* For tablets and below (≤ 1024px) */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-section {
+    padding: 150px 20px 50px;
+  }
+
+  .funfact-area {
+    gap: 20px;
+  }
+}
+
+/* For small tablets / large phones (≤ 768px) */
+@media (max-width: 768px) {
+  .hero-section .content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-section .left,
+  .hero-section .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-sub-title {
+    font-size: 18px;
+  }
+
+  .hero-image-box img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .hero-content-box .lead {
+    font-size: 16px;
+  }
+
+  .funfact-area {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 60px;
+    gap: 20px;
+  }
+}
+
+/* For mobile phones (≤ 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-sub-title {
+    font-size: 16px;
+  }
+
+  .hero-content-box .button-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-image-box img {
+    max-width: 250px;
+  }
+
+  .funfact-area {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .hero-section .intro_text svg text {
+    font-size: 80px;
+  }
+}
+
 /* --------------  End: Hero Section --------------*/
 
 /* --------------   START: Services Section --------------*/
@@ -959,6 +1045,103 @@ header img {
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+/* Media Queries */
+
+/* For Tablets */
+@media screen and (max-width: 1024px) {
+  .services-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .services-widget .service-item {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  .services-widget .service-item .left-box,
+  .services-widget .service-item .right-box {
+    width: 100%;  /* Make them full width on tablet screens */
+    padding: 20px 0;
+  }
+
+  .services-widget .service-item .service-title {
+    font-size: 26px;
+  }
+
+  .services-widget .service-item .number {
+    font-size: 18px;
+  }
+
+  .services-widget i {
+    font-size: 18px;
+    right: 20px;  /* Adjust the icon position */
+  }
+}
+
+/* For Mobile Phones (Landscape & Portrait) */
+@media screen and (max-width: 768px) {
+  .services-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .services-widget .service-item {
+    padding: 0 15px;
+    flex-direction: column;
+  }
+
+  .services-widget .service-item .left-box,
+  .services-widget .service-item .right-box {
+    width: 100%;  /* Ensure full-width on small screens */
+    padding: 15px 0;
+  }
+
+  .services-widget .service-item .service-title {
+    font-size: 22px;
+  }
+
+  .services-widget .service-item .number {
+    font-size: 16px;
+  }
+
+  .services-widget i {
+    font-size: 16px;
+    right: 15px;  /* Adjust for small screens */
+  }
+}
+
+/* For Very Small Mobile Phones */
+@media screen and (max-width: 480px) {
+  .services-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .services-widget .service-item {
+    padding: 0 10px;
+    flex-direction: column;
+  }
+
+  .services-widget .service-item .left-box,
+  .services-widget .service-item .right-box {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .services-widget .service-item .service-title {
+    font-size: 20px;
+  }
+
+  .services-widget .service-item .number {
+    font-size: 14px;
+  }
+
+  .services-widget i {
+    font-size: 14px;
+    right: 10px;  /* Adjust the icon for smaller screens */
+  }
 }
 
 /* --------------   End: Services Section --------------*/
@@ -1945,4 +2128,6 @@ footer img {
     font-size: 36px;
   }
 }
+
+
 
