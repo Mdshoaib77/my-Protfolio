@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
-import { Home, Layout, PortfolioDetails } from "./utils/Router";
+import {
+  Home,
+  Layout,
+  Portfolio,         // Add Portfolio here
+  PortfolioDetails,
+  Service,
+  Resume,
+  Skill,
+  Testimonial,
+  Blog,
+  Contact,
+} from "./utils/Router";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -37,28 +48,82 @@ function App() {
       )}
 
       {!showLoader && (
-        <>
-          <BrowserRouter>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Layout>
-                    <Home />
-                  </Layout>
-                }
-              />
-              <Route
-                path="/details"
-                element={
-                  <Layout>
-                    <PortfolioDetails />
-                  </Layout>
-                }
-              />
-            </Routes>
-          </BrowserRouter>
-        </>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Layout>
+                  <Home />
+                </Layout>
+              }
+            />
+            <Route
+              path="/details"
+              element={
+                <Layout>
+                  <PortfolioDetails />
+                </Layout>
+              }
+            />
+            <Route
+              path="/service"
+              element={
+                <Layout>
+                  <Service />
+                </Layout>
+              }
+            />
+            <Route
+              path="/portfolio"  // Correct route for Portfolio (Works)
+              element={
+                <Layout>
+                  <Portfolio />
+                </Layout>
+              }
+            />
+            <Route
+              path="/resume"
+              element={
+                <Layout>
+                  <Resume />
+                </Layout>
+              }
+            />
+            <Route
+              path="/skill"
+              element={
+                <Layout>
+                  <Skill />
+                </Layout>
+              }
+            />
+            <Route
+              path="/testimonials"
+              element={
+                <Layout>
+                  <Testimonial />
+                </Layout>
+              }
+            />
+            <Route
+              path="/blog"
+              element={
+                <Layout>
+                  <Blog />
+                </Layout>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Layout>
+                  <Contact />
+                </Layout>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
       )}
     </>
   );

@@ -4,6 +4,9 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io";
 import { hero } from "../../assets/data/data";
 
+// Import Framer Motion for animations
+import { motion } from "framer-motion";
+
 export const Hero = () => {
   const socialIcons = [
     {
@@ -27,58 +30,126 @@ export const Hero = () => {
   return (
     <>
       <section className="hero-section">
-        <div className="intro_text">
+        {/* Intro Text Animation */}
+        <motion.div
+          className="intro_text"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
           <svg viewBox="0 0 1320 300">
             <text x="50%" y="50%" textAnchor="middle">
               HI
             </text>
           </svg>
-        </div>
+        </motion.div>
+
         <div className="container">
           <div className="content flexSB">
             <div className="left w-half">
               <div className="hero-content-box">
-                <span className="hero-sub-title">I am Md Shoaib</span>
-                <h1 className="hero-title">
+                {/* Hero Sub Title with Motion */}
+                <motion.span
+                  className="hero-sub-title"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                >
+                  I am Md Shoaib
+                </motion.span>
+
+                {/* Hero Title with Motion */}
+                <motion.h1
+                  className="hero-title"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+                >
                   Web Developer +<br />
                   UI Designer
-                </h1>
+                </motion.h1>
 
+                {/* Hero Image Box (Visible only in medium screens and up) */}
                 <div className="hero-image-box d-md-none text-center">
-                  <img src="assets/img/hero/me.png" alt="" />
+                  <motion.img
+                    src="assets/img/hero/me.png"
+                    alt=""
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+                  />
                 </div>
 
-                <p className="lead">I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people</p>
-                <div className="button-box flexG">
-                  <a href="#" className="btn tj-btn-secondary">
+                {/* Hero Description */}
+                <motion.p
+                  className="lead"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+                >
+                  I break down complex user experience problems to create integrity-focused solutions that connect billions of people.
+                </motion.p>
+
+                {/* Buttons and Social Icons */}
+                <motion.div
+                  className="button-box flexG"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+                >
+                  <a
+                    href="/Resume.pdf"
+                    download="Md_Shoaib_Resume"
+                    className="btn tj-btn-secondary"
+                  >
                     Download CV <i className="flaticon-download"></i>
                   </a>
                   <ul className="ul-reset social-icons">
                     {socialIcons.map((icon, index) => (
-                      <li key={index}>
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.6 + index * 0.2 }}
+                      >
                         <a href="#">{icon.icon}</a>
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               </div>
             </div>
+
+            {/* Profile Image */}
             <div className="right w-half">
               <div className="hero-image-box text-center">
-              <img src="../images/common/profile1.jpg" alt="profile" style={{ width: "400px", height: "500px", objectFit: "cover" }} />
-
+                <motion.img
+                  src="../images/common/profile1.jpg"
+                  alt="profile"
+                  style={{ width: "400px", height: "500px", objectFit: "cover" }}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1.5, ease: "easeOut", delay: 0.7 }}
+                />
               </div>
             </div>
           </div>
 
+          {/* Fun Fact Area */}
           <div className="funfact-area grid4">
             {hero.map((item, index) => (
-              <div className="funfact-item" key={index}>
+              <motion.div
+                className="funfact-item"
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.8 + index * 0.2 }}
+              >
                 <div className="number">
                   <span>{item.text}</span>
                 </div>
                 <div className="text">{item.title}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
